@@ -6,17 +6,15 @@ def test
 	while true
 		question = questions[rand(10)]
 		if question == questions[9]
-			puts question
-			answer = gets.chomp.downcase
+			answer = ask(question).downcase
 			if answer == 'yes'
-				puts 'That is the right answer'
+				say('That is the right answer')
 				return
 			else
-				puts 'That is the wrong answer. You DO like Jack Daniels'
+				say('That is the wrong answer. You DO like Jack Daniels')
 			end
 		end
-		puts question
-		do_not_care = gets.chomp
+		do_not_care = ask(question)
 	end
 end
 
