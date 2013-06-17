@@ -8,6 +8,6 @@ var bob = function(input) {
     } else if(input === "") {
     console.log("Fine. Be that way!");
     }
-}
+};
 
-bob("YELL!")
+bob("YELL!");
