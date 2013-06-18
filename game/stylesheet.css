@@ -407,3 +407,7 @@ table {
 .row {
 	clear:both;
 }
+
+.hidden {
+	display: none;
+}

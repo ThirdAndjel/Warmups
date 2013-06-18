@@ -13,3 +13,12 @@ $(document).ready(function() {
 		$('.left').css('background-color', '');
 	});
 });
+
+// $(document).ready(function() {
+// 	if ($('.left').css('background-color') === 'rgb(0, 0, 255)') {
+// 		$('.hidden').removeClass('.hidden');
+// 	}
+// });
+
+
+if ($('.left').css('background-color') === 'rgb(0, 0, 255)') {$('.hidden').css('display','block');}
