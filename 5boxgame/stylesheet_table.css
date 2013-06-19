@@ -18,6 +18,8 @@
 
 td {
   border: solid;
+  height:80px;
+  width:80px;
 }
 
 .bottom {
