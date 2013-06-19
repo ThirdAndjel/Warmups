@@ -1,0 +1,21 @@
+.blue {
+  background-color:blue;
+}
+
+.red {
+  background-color:red;
+}
+
+.default {
+  background-color:lightgray;
+}
+
+.span1 {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+td {
+  border: solid;
+}
