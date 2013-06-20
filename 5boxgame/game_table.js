@@ -18,6 +18,7 @@ $(document).ready(function(){
 			xhigh += 1;
 			$newrow = $('td[data-row="' + xcord + '"]').parent().clone();
 			$newrow.find('td').attr('data-row', xhigh);
+			$newrow.addClass('was_added');
 			$(this).parent().parent().append($newrow);
 		}
 		//HANDLE EXPANDING ROW UP
@@ -25,6 +26,7 @@ $(document).ready(function(){
 			xlow -= 1;
 			$newrow = $('td[data-row="' + xcord + '"]').parent().clone();
 			$newrow.find('td').attr('data-row', xlow);
+			$newrow.addClass('was_added');
 			$(this).parent().parent().prepend($newrow);
 		}
 		//HANDLE EXPANDING COLUMNS RIGHT
@@ -32,7 +34,7 @@ $(document).ready(function(){
 			yhigh += 1;
 			$('td[data-column="' + ycord + '"]').each(function(){
 				tempxcord = $(this).data('row');
-				$(this).parent().append('<td data-row="' + tempxcord+ '" data-column="' + yhigh + '"></td>')
+				$(this).parent().append('<td class="was_added" data-row="' + tempxcord+ '" data-column="' + yhigh + '"></td>');
 			});
 		}
 		//HANDLE EXPANDING COLUMNS LEFT
@@ -40,7 +42,7 @@ $(document).ready(function(){
 			ylow -= 1;
 			$('td[data-column="' + ycord + '"]').each(function(){
 				tempxcord = $(this).data('row');
-				$(this).parent().prepend('<td data-row="' + tempxcord+ '" data-column="' + ylow + '"></td>')
+				$(this).parent().prepend('<td class="was_added" data-row="' + tempxcord+ '" data-column="' + ylow + '"></td>');
 			});
 		}
 
@@ -67,4 +69,37 @@ $(document).ready(function(){
 
 		} //END IF STATEMENT
 	}); //END CLICK HANDLER
+	//WIPE BUTTON REMOVES COLOR ONLY
+	$('a.wipe').on('click',function() {
+		$('.blue').removeClass('blue');
+		$('.red').removeClass('red');
+		$('.bluescore').text('0');
+		$('.redscore').text('0');
+	});//END WIPE BUTTON
+	//SCORE
+	$('body').on('click',function() {
+		var bluecount = 0;
+		var redcount = 0;
+		$('.blue').each(function() {
+			bluecount += 1;
+			$('.bluescore').text(bluecount);
+		});
+		$('.red').each(function() {
+			redcount += 1;
+			$('.redscore').text(redcount);
+		});
+	});//END SCORE
+	//RESET BUTTON REMOVES EXTRA TYLES
+	$('a.reset').on('click',function() {
+		$('.was_added').remove();
+		$('.blue').removeClass('blue');
+		$('.red').removeClass('red');
+		$('.bluescore').text('0');
+		$('.redscore').text('0');
+		turn = true;
+		xhigh = 5;
+		xlow = 1;
+		yhigh = 5;
+		ylow = 1;
+	});//END RESET
 });

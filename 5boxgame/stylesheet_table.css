@@ -10,24 +10,26 @@
   background-color:lightgray;
 }
 
-.span1 {
-  height: 80px;
-  width: 80px;
-  margin-bottom: 20px;
-}
-
 td {
   border: solid;
-  height:80px;
-  width:80px;
+  height:40px;
+  width:40px;
   text-align: center;
 }
 
-.bottom {
-	margin-bottom: 30px;
+.container {
+	margin-top: 10px;
 }
 
 table {
 	margin-left: auto;
 	margin-right:auto;
+}
+
+.bluescore {
+  color:blue;
+}
+
+.redscore {
+  color:red;
 }
