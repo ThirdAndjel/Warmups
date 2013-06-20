@@ -20,8 +20,14 @@ td {
   border: solid;
   height:80px;
   width:80px;
+  text-align: center;
 }
 
 .bottom {
 	margin-bottom: 30px;
+}
+
+table {
+	margin-left: auto;
+	margin-right:auto;
 }
