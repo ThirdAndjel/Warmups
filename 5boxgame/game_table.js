@@ -17,7 +17,7 @@ $(document).ready(function(){
 		if((xcord + 1) > xhigh) {
 			xhigh += 1;
 			$newrow = $('td[data-row="' + xcord + '"]').parent().clone();
-			$newrow.find('td').attr('data-row', xhigh);
+			$newrow.find('td').attr('data-row', xhigh).removeClass('blue').removeClass('red');
 			$newrow.addClass('was_added');
 			$(this).parent().parent().append($newrow);
 		}
@@ -25,7 +25,7 @@ $(document).ready(function(){
 		if((xcord - 1) < xlow) {
 			xlow -= 1;
 			$newrow = $('td[data-row="' + xcord + '"]').parent().clone();
-			$newrow.find('td').attr('data-row', xlow);
+			$newrow.find('td').attr('data-row', xlow).removeClass('blue').removeClass('red');
 			$newrow.addClass('was_added');
 			$(this).parent().parent().prepend($newrow);
 		}
